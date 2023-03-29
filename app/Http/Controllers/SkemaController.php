@@ -27,4 +27,9 @@ class SkemaController extends Controller
         return redirect()->back()->withToastSuccess('Skema Sertifikasi Berhasil Diubah');
     }
 
+    public function hapusSkema(Request $request){
+        $id = Request()->id;
+        Skema::where('id',$id)->delete();
+        return redirect()->back()->withToastSuccess('Skema Sertifikasi Berhasil Diubah');
+    }
 }

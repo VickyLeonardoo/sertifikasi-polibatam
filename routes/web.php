@@ -48,6 +48,7 @@ Route::group(['middleware' => ['auth:asesor']], function () {
         Route::get('/dashboard-asesor/skema-sertifikasi',[AsesorController::class,'viewSkema']);
         Route::post('/simpan-skema-sertifikasi',[SkemaController::class,'simpanSkema']);
         Route::post('/update-skema-sertifikasi',[SkemaController::class,'updateSkema']);
+        Route::post('/hapus-skema-sertifikasi',[SkemaController::class,'hapusSkema']);
         Route::get('/dashboard-asesor/data-asesi',[AsesorController::class,'viewAsesi']);
 
     });

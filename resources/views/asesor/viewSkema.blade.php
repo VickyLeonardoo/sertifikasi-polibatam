@@ -25,8 +25,9 @@
                                 <td>{{ $data->prodi->namaProdi }}</td>
                                 <td>
                                     <a href="#" data-toggle="modal" data-target="#modalUpdate{{ $data->id }}" class="btn btn-info"><i
-                                            class="fas fa-edit"></i></a>
-                                    <a href="" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                    class="fas fa-edit"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#modalHapus{{ $data->id }}" class="btn btn-danger"><i
+                                        class="fas fa-trash"></i></a>
 
                                 </td>
                             </tr>
@@ -121,4 +122,31 @@
             </div>
         </div>
     @endforeach
+
+    {{-- modal hapus --}}
+    @foreach ($skema as $data)
+    <div class="modal fade" id="modalHapus{{ $data->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Ubah Skema Sertifikasi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/hapus-skema-sertifikasi" method="post">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $data->id }}">
+                        <h3>Hapus Data Sertifikasi {{ $data->nama }}?</h1>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" value="Hapus" class="btn btn-danger"></input>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+@endforeach
 @endsection

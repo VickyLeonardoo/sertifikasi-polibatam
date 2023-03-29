@@ -7,7 +7,9 @@
                 <thead>
                     <tr>
                         <th>Nomor</th>
-                        <th>Nama Sertifikasi</th>
+                        <th>NIM</th>
+                        <th>Nama</th>
+                        <th>Prodi</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -15,13 +17,12 @@
                 <tbody>
                     @foreach ($asesi as $data)
                     <tr>
+                        <td>{{ $i++ }}</td>
+                        <td>{{ $data->nim }}</td>
                         <td>{{ $data->nama }}</td>
                         <td>{{ $data->prodi }}</td>
                         <td>
-                            <a href="#" data-toggle="modal" data-target="#modalUpdate" class="btn btn-info"><i
-                                    class="fas fa-edit"></i></a>
                             <a href="" class="btn btn-danger"><i class="fas fa-trash"></i></a>
-
                         </td>
                     </tr>
                     @endforeach
@@ -29,7 +30,9 @@
                 <tfoot>
                     <tr>
                         <th>Nomor</th>
-                        <th>Nama Sertifikasi</th>
+                        <th>NIM</th>
+                        <th>Nama</th>
+                        <th>Prodi</th>
                         <th>Aksi</th>
                     </tr>
                 </tfoot>

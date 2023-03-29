@@ -56,7 +56,7 @@
                     <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 
                         <li class="nav-item dropdown hidden-caret">
-                            <a href="logout" id="messageDropdown" style="color: white">
+                            <a href="/logout" id="messageDropdown" style="color: white">
                                 <i class="fa-solid fa-right-from-bracket"></i>
                             </a>
                         </li>

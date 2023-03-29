@@ -32,6 +32,6 @@ class AuthController extends Controller
     {
         $request->session()->flush();
         Auth::logout();
-        return redirect('/login');
+        return redirect('/login')->withToastSuccess('Berhasil Logout');
     }
 }
