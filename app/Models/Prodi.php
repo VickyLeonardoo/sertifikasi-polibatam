@@ -11,5 +11,7 @@ class Prodi extends Model
 
     protected $guarded = ['id'];
 
-
+    public function skema(){
+        return $this->hasMany(Skema::class);
+    }
 }

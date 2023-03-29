@@ -21,7 +21,7 @@ class AuthController extends Controller
 
             }elseif (Auth::guard('asesor')->attempt($kredensil)) {
                 $user = Auth::guard('asesor')->user();
-                    return redirect()->route('viewHome')->withToastSuccess('Login Berhasil');
+                    return redirect()->intended('dashboard-asesor')->withToastSuccess('Login Berhasil');
             }
             return redirect('/login')->withToastError('Maaf Username atau Password anda salah');
 

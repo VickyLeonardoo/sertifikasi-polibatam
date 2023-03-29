@@ -14,4 +14,8 @@ class Skema extends Model
     public function apl1(){
         return $this->hasMany(Apl1::class);
     }
+
+    public function prodi(){
+        return $this->belongsTo(Prodi::class);
+    }
 }

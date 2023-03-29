@@ -8,6 +8,7 @@ use DB;
 use App\Models\Role;
 use App\Models\Prodi;
 use App\Models\Skema;
+use App\Models\Asesor;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -22,28 +23,34 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        Role::create([
-            'nama' => 'Asesor'
-        ]);
+        // Role::create([
+        //     'nama' => 'Asesor'
+        // ]);
 
-        Role::create([
-            'nama' => 'Asesi'
-        ]);
+        // Role::create([
+        //     'nama' => 'Asesi'
+        // ]);
 
-        Prodi::create([
-            'kodeProdi' => 'IF',
-            'namaProdi' => 'Teknik Informatika'
-        ]);
+        // Prodi::create([
+        //     'kodeProdi' => 'IF',
+        //     'namaProdi' => 'Teknik Informatika'
+        // ]);
 
-        Prodi::create([
-            'kodeProdi' => 'MM',
-            'namaProdi' => 'Teknik Multimedia dan Jaringan'
-        ]);
+        // Prodi::create([
+        //     'kodeProdi' => 'MM',
+        //     'namaProdi' => 'Teknik Multimedia dan Jaringan'
+        // ]);
 
-        Skema::create([
-            'nama' => 'Junior Web Programming',
-            'prodi_id' => '1'
-        ]);
+        // Skema::create([
+        //     'nama' => 'Junior Web Programming',
+        //     'prodi_id' => '1'
+        // ]);
 
+        Asesor::create([
+            'nim' => '11111',
+            'email' => 'Asesor@gmail.com',
+            'password' => bcrypt('12345'),
+            'role_id' => '2'
+        ]);
     }
 }
