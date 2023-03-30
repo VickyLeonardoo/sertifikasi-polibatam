@@ -15,11 +15,16 @@
                     </a>
                     <div class="clearfix"></div>
 
-                    <div class="collapse in" id="collapseExample">
+                    <div class="collapse in {{ request()->is('dashboard-asesi/identitas','dashboard-asesi/ganti-psswor') ? 'show' : '' }}" id="collapseExample">
                         <ul class="nav">
                             <li>
                                 <a href="/dashboard-asesi/identitas">
                                     <span class="link-collapse">Identitas</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dashboard-asesi/ganti-password">
+                                    <span class="link-collapse">Password</span>
                                 </a>
                             </li>
                         </ul>
@@ -48,13 +53,13 @@
                         </ul>
                     </div>
                 </li>
-                <li class="nav-section">
+                <li class="nav-section" >
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
                     </span>
                     <h4 class="text-section">APL</h4>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item  {{ request()->is('dashboard-asesi/apl') ? 'active' : '' }}">
                     <a href="/dashboard-asesi/apl">
                         <i class="fas fa-table"></i>
                         <p>APL</p>

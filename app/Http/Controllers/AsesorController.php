@@ -16,6 +16,8 @@ class AsesorController extends Controller
             'subtitle' => 'Dashboard Asesor',
             'jmlAsesi' => User::count(),
             'jmlSkema' => Skema::count(),
+            'jmlVer' => Apl1::where('status','0')->count(),
+            'jmlTerdaftar' => Apl1::where('status','1')->count(),
         ]);
     }
 
@@ -49,7 +51,25 @@ class AsesorController extends Controller
         return view('asesor.viewPendaftar',[
             'title' => 'Dashboard Data Pendaftar',
             'subtitle' => 'Data Pendaftar',
-            'apl' => Apl1::get(),
+            'apl' => Apl1::where('status','0')->get(),
         ]);
+    }
+
+    public function verifikasiPendaftar(){
+        $id = Request()->idPendaftar;
+        $tolak = [
+            'status' => 2
+        ];
+
+        $acc = [
+            'status' => 1
+        ];
+
+        if (Request()->verif == 'acc') {
+            Apl1::where('id',$id)->update($acc);
+        }else{
+            Apl1::where('id',$id)->update($tolak);
+        }
+        return redirect()->back()->withToastSuccess('Berhasil Mendaftarkan.');
     }
 }

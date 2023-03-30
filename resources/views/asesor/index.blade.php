@@ -23,17 +23,17 @@
         </div>
         <div class="col-sm-6 col-md-3">
             <div class="card card-stats card-round">
-                <div class="card-body ">
+                <div class="card-body">
                     <div class="row">
                         <div class="col-5">
                             <div class="icon-big text-center">
-                                <i class="flaticon-coins text-success"></i>
+                                <i class="flaticon-error text-danger"></i>
                             </div>
                         </div>
                         <div class="col-7 col-stats">
                             <div class="numbers">
-                                <p class="card-category">Skema Sertifikasi</p>
-                                <h4 class="card-title">{{ $jmlSkema }}</h4>
+                                <p class="card-category">Belum Terdaftar</p>
+                                <h4 class="card-title">{{ $jmlVer }}</h4>
                             </div>
                         </div>
                     </div>
@@ -46,13 +46,13 @@
                     <div class="row">
                         <div class="col-5">
                             <div class="icon-big text-center">
-                                <i class="flaticon-error text-danger"></i>
+                                <i class="flaticon-check text-success"></i>
                             </div>
                         </div>
                         <div class="col-7 col-stats">
                             <div class="numbers">
-                                <p class="card-category">Errors</p>
-                                <h4 class="card-title">23</h4>
+                                <p class="card-category">Terdaftar</p>
+                                <h4 class="card-title">{{ $jmlTerdaftar }}</h4>
                             </div>
                         </div>
                     </div>
@@ -70,8 +70,8 @@
                         </div>
                         <div class="col-7 col-stats">
                             <div class="numbers">
-                                <p class="card-category">Followers</p>
-                                <h4 class="card-title">+45K</h4>
+                                <p class="card-category">Skema</p>
+                                <h4 class="card-title">{{ $jmlSkema }}</h4>
                             </div>
                         </div>
                     </div>

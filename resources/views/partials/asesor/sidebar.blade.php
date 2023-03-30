@@ -39,14 +39,15 @@
                 </div>
             </div>
             <ul class="nav nav-primary">
-                <li class="nav-item {{ request()->is('dashboard-asesor/data-asesi') ? 'active' : '' }} submenu">
+                <li class="nav-item {{ request()->is('dashboard-asesor/data-asesi','dashboard-asesor/data-pendaftar') ? 'active' : '' }} submenu">
                     <a data-toggle="collapse" href="#base">
                         <i class="fas fa-layer-group"></i>
-                        <p>Base</p>
+                        <p>Data</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse {{ request()->is('dashboard-asesor/data-asesi') ? 'show' : '' }}" id="base">
-                        <ul class="nav nav-collapse {{ request()->is('dashboard-asesor/data-asesi') ? 'active' : '' }}">
+                    <div class="collapse {{ request()->is('dashboard-asesor/data-asesi','dashboard-asesor/data-pendaftar') ? 'show' : '' }}" id="base">
+                        <ul class="nav nav-collapse">
+
                             <li class="{{request()->is('dashboard-asesor/data-asesi') ? 'active' : '' }}">
                                 <a href="/dashboard-asesor/data-asesi">
                                     <span class="sub-item">Data Asesi</span>
