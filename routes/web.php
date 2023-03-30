@@ -27,7 +27,6 @@ Route::get('/as', function () {
 });
 
 
-
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::post('/proses_login', [AuthController::class, 'prosesLogin']);
@@ -39,6 +38,8 @@ Route::post('/simpanPendaftaran', [PendaftaranController::class, 'simpanPendafta
 Route::group(['middleware' => ['auth:user']], function () {
     Route::group(['middleware' => ['cek_login:2']], function () {
         Route::get('/dashboard-asesi', [AsesiController::class, 'index'])->name('indexAsesi');
+        Route::get('/dashboard-asesi/identitas', [AsesiController::class, 'viewProfile'])->name('profile');
+        Route::get('/dashboard-asesi/apl',[AsesiController::class,'viewApl']);
     });
 });
 
@@ -50,6 +51,8 @@ Route::group(['middleware' => ['auth:asesor']], function () {
         Route::post('/update-skema-sertifikasi',[SkemaController::class,'updateSkema']);
         Route::post('/hapus-skema-sertifikasi',[SkemaController::class,'hapusSkema']);
         Route::get('/dashboard-asesor/data-asesi',[AsesorController::class,'viewAsesi']);
+        Route::get('/dashboard-asesor/data-pendaftar',[AsesorController::class,'viewPendaftar']);
+        Route::get('/dashboard-asesor/identitas-asesi-{slug}',[AsesorController::class,'viewProfile']);
 
     });
 });

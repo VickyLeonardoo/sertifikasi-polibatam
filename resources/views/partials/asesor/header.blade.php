@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>{{ $title }}</title>
+    <title>Sertifikasi Polibatam | {{ $title }}</title>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
@@ -23,6 +23,16 @@
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
+    <style>
+        #textfield:hover {
+            cursor: default;
+        }
+
+        #textfield:focus {
+            cursor: default;
+            outline: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -86,7 +96,7 @@
                     </div>
                     @yield('content')
                 </div>
-           @include('partials.asesor.footer')
+                @include('partials.asesor.footer')
             </div>
         </div>
     </div>
@@ -124,6 +134,10 @@
             active: function() {
                 sessionStorage.fonts = true;
             }
+        });
+
+        $("#unclickable").focus(function() {
+            $(this).blur();
         });
     </script>
 

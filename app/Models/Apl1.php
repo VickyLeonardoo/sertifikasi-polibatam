@@ -14,4 +14,8 @@ class Apl1 extends Model
     public function skema(){
         return $this->belongsTo(Skema::class);
     }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

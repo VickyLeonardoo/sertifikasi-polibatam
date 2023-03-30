@@ -18,18 +18,8 @@
                     <div class="collapse in" id="collapseExample">
                         <ul class="nav">
                             <li>
-                                <a href="#profile">
-                                    <span class="link-collapse">My Profile</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#edit">
-                                    <span class="link-collapse">Edit Profile</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#settings">
-                                    <span class="link-collapse">Settings</span>
+                                <a href="/dashboard-asesi/identitas">
+                                    <span class="link-collapse">Identitas</span>
                                 </a>
                             </li>
                         </ul>
@@ -62,28 +52,13 @@
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
                     </span>
-                    <h4 class="text-section">Components</h4>
+                    <h4 class="text-section">APL</h4>
                 </li>
                 <li class="nav-item">
-                    <a data-toggle="collapse" href="#tables">
+                    <a href="/dashboard-asesi/apl">
                         <i class="fas fa-table"></i>
-                        <p>Tables</p>
-                        <span class="caret"></span>
+                        <p>APL</p>
                     </a>
-                    <div class="collapse" id="tables">
-                        <ul class="nav nav-collapse">
-                            <li>
-                                <a href="tables/tables.html">
-                                    <span class="sub-item">Basic Table</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="tables/datatables.html">
-                                    <span class="sub-item">Datatables</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </li>
 
             </ul>

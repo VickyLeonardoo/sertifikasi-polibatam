@@ -1,4 +1,4 @@
-@extends('partials.asesor.header')
+@extends('partials.asesi.header')
 @section('content')
 <div class="page-inner mt--5">
     <div class="row row-card-no-pd mt--3">
@@ -7,33 +7,31 @@
                 <thead>
                     <tr>
                         <th>Nomor</th>
-                        <th>NIM</th>
+                        <th>Tujuan</th>
                         <th>Nama</th>
-                        <th>Prodi</th>
-                        <th>Aksi</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <?php $i = 1; ?>
                 <tbody>
-                    @foreach ($asesi as $data)
+                    @foreach ($apl as $data)
                     <tr>
                         <td>{{ $i++ }}</td>
-                        <td>{{ $data->nim }}</td>
-                        <td>{{ $data->nama }}</td>
-                        <td>{{ $data->prodi }}</td>
-                        <td>
-                            <a href="/dashboard-asesor/identitas-asesi-{{ $data->slug }}" class="btn btn-info" ><i class="fas fa-user"></i></a>
-                            <a href="" class="btn btn-danger"><i class="fas fa-trash"></i></a>
-                        </td>
+                        <td>{{ $data->tujuanAsesmen }}</td>
+                        <td>{{ $data->skema->nama }}</td>
+                        <td>@if ($data->status == 1)
+                            Pendaftaran Berhasil
+                            @else
+                            Menunggu Verifikasi Asesor
+                        @endif</td>
                     </tr>
                     @endforeach
                 </tbody>
                 <tfoot>
                     <tr>
                         <th>Nomor</th>
-                        <th>NIM</th>
+                        <th>Tujuan</th>
                         <th>Nama</th>
-                        <th>Prodi</th>
                         <th>Aksi</th>
                     </tr>
                 </tfoot>

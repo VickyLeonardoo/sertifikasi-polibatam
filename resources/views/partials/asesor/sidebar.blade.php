@@ -47,9 +47,14 @@
                     </a>
                     <div class="collapse {{ request()->is('dashboard-asesor/data-asesi') ? 'show' : '' }}" id="base">
                         <ul class="nav nav-collapse {{ request()->is('dashboard-asesor/data-asesi') ? 'active' : '' }}">
-                            <li>
+                            <li class="{{request()->is('dashboard-asesor/data-asesi') ? 'active' : '' }}">
                                 <a href="/dashboard-asesor/data-asesi">
                                     <span class="sub-item">Data Asesi</span>
+                                </a>
+                            </li>
+                            <li class="{{ request()->is('dashboard-asesor/data-pendaftar') ? 'active' : '' }}">
+                                <a href="/dashboard-asesor/data-pendaftar">
+                                    <span class="sub-item">Data Pendaftar</span>
                                 </a>
                             </li>
                         </ul>

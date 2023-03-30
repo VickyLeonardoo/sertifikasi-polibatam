@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendMail;
 use Illuminate\Http\Request;
 use App\Models\Skema;
 use Http;
@@ -10,6 +11,7 @@ Use App\Models\Pekerjaan;
 use App\Models\Apl1;
 use Auth;
 use Redirect;
+use Illuminate\Support\Facades\Mail;
 
 class PendaftaranController extends Controller
 {
@@ -25,7 +27,10 @@ class PendaftaranController extends Controller
         $nim = Request()->nim;
         $res = Http::get("http://sid.polibatam.ac.id/apilogin/web/api/auth/cek-id?id={$nim}");
         $getData = json_decode(json_encode($res['data']));
-
+        $str = strtolower($nim.'-'.$getData->name);
+        $email = $getData->email;
+        $skema = Skema::where('id',Request()->skema)->first();
+        $skemaNama = $skema->nama;
         $user = User::create([
             'nama' => $getData->name,
             'nim' => $getData->nim_nik_unit,
@@ -38,15 +43,15 @@ class PendaftaranController extends Controller
             'prodi' => $getData->prodi,
             'email' =>  $getData->email,
             'password' => bcrypt('123456'),
-            'role_id' => 2
-
+            'role_id' => 2,
+            'slug' => preg_replace('/\s+/', '-', $str),
         ]);
 
         $pekerjaan = Pekerjaan::create([
             'user_id' => $user->id,
             'namaPerusahaan' => Request()->namaPerusahaan,
             'jabatan'=> Request()->jabatan,
-            'alamat' => Request()->alamatPerusahaan,
+            'alamatPerusahaan' => Request()->alamatPerusahaan,
             'telp' => Request()->telp,
             'email' => Request()->email,
 
@@ -57,6 +62,14 @@ class PendaftaranController extends Controller
             'tujuanAsesmen' => Request()->tujuanAsesmen,
             'skema_id' => Request()->skema,
         ]);
+
+        $isiEmail = [
+            'nama' => $getData->name,
+            'nim' => $getData->nim_nik_unit,
+            'skema' => $skemaNama,
+        ];
+
+        Mail::to($email)->send(new SendMail($isiEmail));
 
         $kredensil = array(
             'nim' => $user->nim,

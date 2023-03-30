@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('apl1s', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('tujuanAsesmen');
             $table->foreignId('skema_id');
             $table->timestamps();

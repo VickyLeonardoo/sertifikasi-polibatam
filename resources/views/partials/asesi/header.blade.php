@@ -3,8 +3,13 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>{{ $title }}</title>
+	<title>Sertifikasi Polibatam | {{ $title }}</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+
 	<link rel="icon" href="{{ asset('dashboard') }}/assets/img/icon.ico" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
@@ -56,7 +61,7 @@
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 
 						<li class="nav-item dropdown hidden-caret">
-							<a  href="logout" id="messageDropdown" style="color: white">
+							<a  href="/logout" id="messageDropdown" style="color: white">
 								<i class="fa-solid fa-right-from-bracket"></i>
 							</a>
 						</li>
@@ -119,7 +124,6 @@
 @include('sweetalert::alert')
 
 	<!--   Core JS Files   -->
-	<script src="{{ asset('dashboard') }}/assets/js/core/jquery.3.2.1.min.js"></script>
 	<script src="{{ asset('dashboard') }}/assets/js/core/bootstrap.min.js"></script>
 
 	<!-- jQuery UI -->
@@ -128,7 +132,34 @@
 
 	<!-- jQuery Scrollbar -->
 	<script src="{{ asset('dashboard') }}/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable({
+                language: {
+                    url: "{{ asset('asset') }}/js/bahasa.json"
+                }
+            });
+        });
 
+        WebFont.load({
+            google: {
+                "families": ["Lato:300,400,700,900"]
+            },
+            custom: {
+                "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands",
+                    "simple-line-icons"
+                ],
+                urls: ['{{ asset('dashboard') }}/assets/css/fonts.min.css']
+            },
+            active: function() {
+                sessionStorage.fonts = true;
+            }
+        });
+
+        $("#unclickable").focus(function() {
+            $(this).blur();
+        });
+    </script>
 	<!-- Atlantis JS -->
 	<script src="{{ asset('dashboard') }}/assets/js/atlantis.min.js"></script>
 
