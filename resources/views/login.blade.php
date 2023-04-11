@@ -1,48 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-	<title>Login V10</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="asetlog/css/util.css">
-	<link rel="stylesheet" type="text/css" href="asetlog/css/main.css">
-	<meta name="robots" content="noindex, follow">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <title>Hello, world!</title>
 </head>
 
 <body>
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100 p-t-50 p-b-90">
-				<form class="login100-form validate-form flex-sb flex-w" method="post" action="/proses_login">
-                    @csrf
-					<span class="login100-form-title p-b-51">
-						Login
-					</span>
-					<div class="wrap-input100 validate-input m-b-16" data-validate="Nim is required">
-						<input class="input100" type="text" name="nim" placeholder="NIM">
-						<span class="focus-input100"></span>
-					</div>
-					<div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
-						<input class="input100" type="password" name="password" placeholder="Password">
-						<span class="focus-input100"></span>
-					</div>
-					<div class="flex-sb-m w-full p-t-3 p-b-24">
-						<div class="contact100-form-checkbox">
-							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-						</div>
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-9 col-lg-6 col-xl-5">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                        class="img-fluid" alt="Sample image">
+                </div>
+                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                    <form method="post" action="/proses_login">
+                        @csrf
+                        <div class="form-outline mb-4">
+                            <input type="text" id="form3Example3" class="form-control form-control-lg"
+                                placeholder="Masukkan NIM" name="nim" />
+                        </div>
 
-					</div>
-					<div class="container-login100-form-btn m-t-17">
-						<button class="login100-form-btn">
-							Login
-						</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</body>
+                        <!-- Password input -->
+                        <div class="form-outline mb-3">
+                            <input type="password" id="form3Example4" class="form-control form-control-lg"
+                                placeholder="Masukkan Password" name="password" />
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <!-- Checkbox -->
+                            <div class="form-check mb-0">
+                                <input class="form-check-input me-2" type="checkbox" value=""
+                                    id="form2Example3" />
+                                <label class="form-check-label" for="form2Example3">
+                                    Remember me
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="text-center text-lg-start mt-4 pt-2">
+                            <input type="submit" class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;" value="Login"></input>
+                            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/pendaftaran"
+                                    class="link-danger">Register</a></p>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div
+            class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+            <!-- Copyright -->
+            <div class="text-white mb-3 mb-md-0">
+                Copyright © 2020. All rights reserved.
+            </div>
+            <!-- Copyright -->
+
+            <!-- Right -->
+            <div>
+                <a href="#!" class="text-white me-4">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#!" class="text-white me-4">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#!" class="text-white me-4">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="#!" class="text-white">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </div>
+    </section>
+
 @include('sweetalert::alert')
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
 
 </html>
