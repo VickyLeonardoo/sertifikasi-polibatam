@@ -12,7 +12,7 @@ use App\Models\Apl1;
 use Auth;
 use Redirect;
 use Illuminate\Support\Facades\Mail;
-
+use App\Models\Unit;
 class PendaftaranController extends Controller
 {
     public function viewPendaftaran(){
@@ -88,5 +88,12 @@ class PendaftaranController extends Controller
 
     // return redirect()->route('indexAsesi')->withToastSuccess('Kamu Berhasil Mendaftar, Silahkan Melengkapi APL 02');
 
+    }
+
+    public function testpertanyaan(){
+        $t = Unit::first();
+        $t->elemen;
+        return $t;
+        return Unit::all();
     }
 }

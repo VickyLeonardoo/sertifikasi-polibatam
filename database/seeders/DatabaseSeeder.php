@@ -9,6 +9,9 @@ use App\Models\Role;
 use App\Models\Prodi;
 use App\Models\Skema;
 use App\Models\Asesor;
+use App\Models\Pertanyaan;
+use App\Models\Elemen;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -46,11 +49,14 @@ class DatabaseSeeder extends Seeder
         //     'prodi_id' => '1'
         // ]);
 
-        Asesor::create([
-            'nim' => '11111',
-            'email' => 'Asesor@gmail.com',
-            'password' => bcrypt('12345'),
-            'role_id' => '2'
-        ]);
+        // Asesor::create([
+        //     'nim' => '11111',
+        //     'email' => 'Asesor@gmail.com',
+        //     'password' => bcrypt('12345'),
+        //     'role_id' => '2'
+        // ]);
+
+
+
     }
 }

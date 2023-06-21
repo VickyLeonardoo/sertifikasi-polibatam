@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
 use App\Models\Apl1;
+use App\Models\Apl2;
+use App\Models\Unit;
+use App\Models\Elemen;
+use App\Models\Pertanyaan;
 
 class AsesiController extends Controller
 {
@@ -66,5 +70,12 @@ class AsesiController extends Controller
 
             return redirect()->back()->withToastSuccess('Password Berhasil Diganti.');
         }
+    }
+
+    public function viewApl2(){
+        return view('asesi.viewApl2',[
+            'unit' => Unit::all(),
+            'title' => 'Apl - 02',
+        ]);
     }
 }

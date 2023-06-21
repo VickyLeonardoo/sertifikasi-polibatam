@@ -26,6 +26,8 @@ Route::get('/as', function () {
     return view('dashboaord');
 });
 
+Route::get('/pertanyaan-test',[PendaftaranController::class,'testpertanyaan']);
+
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout']);
@@ -42,6 +44,8 @@ Route::group(['middleware' => ['auth:user']], function () {
         Route::get('/dashboard-asesi/ganti-password', [AsesiController::class, 'viewPassword'])->name('viewPassword');
         Route::post('/dashboard-asesi/simpan-password', [AsesiController::class, 'simpanPassword']);
         Route::get('/dashboard-asesi/apl',[AsesiController::class,'viewApl']);
+        Route::get('/dashboard-asesi/apl-dua',[AsesiController::class,'viewApl2']);
+
     });
 });
 
