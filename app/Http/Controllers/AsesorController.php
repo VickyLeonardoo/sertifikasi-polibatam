@@ -7,7 +7,9 @@ use App\Models\Skema;
 use App\Models\Prodi;
 use App\Models\User;
 use App\Models\Apl1;
-
+use App\Models\Formulir;
+use App\Models\Unit;
+use App\Models\Apl2;
 class AsesorController extends Controller
 {
     public function index(){
@@ -51,7 +53,7 @@ class AsesorController extends Controller
         return view('asesor.viewPendaftar',[
             'title' => 'Dashboard Data Pendaftar',
             'subtitle' => 'Data Pendaftar',
-            'apl' => Apl1::where('status','0')->get(),
+            'apl' => Formulir::where('status', 'Menunggu')->get(),
         ]);
     }
 
@@ -71,5 +73,41 @@ class AsesorController extends Controller
             Apl1::where('id',$id)->update($tolak);
         }
         return redirect()->back()->withToastSuccess('Berhasil Mendaftarkan.');
+    }
+
+    public function viewAplPendaftar($slug){
+        $user = User::where('slug', $slug)->first();
+        $idUser = $user->id;
+        $form = Formulir::where('user_id', $idUser)->first();
+        $idForm = $form->id;
+        return view('asesor.viewApl',[
+            'title' => 'APL 02',
+            'subtitle' => 'APL 02',
+            'unit' => Unit::all(),
+            'apl' => Apl2::where('formulir_id', $idForm)->get(),
+            'idForm' => $idForm,
+
+        ]);
+
+    }
+
+    public function lulusApl($id){
+        $data = [
+            'status' => 'Lulus'
+        ];
+
+        Formulir::where('id',$id)->update($data);
+        return redirect()->back()->withToastSuccess('Berhasil Diverifikasi');
+
+    }
+
+    public function tolakApl($id){
+        $data = [
+            'status' => 'Tidak Lulus'
+        ];
+
+        Formulir::where('id',$id)->update($data);
+        return redirect()->back()->withToastSuccess('Berhasil Diverifikasi');
+
     }
 }

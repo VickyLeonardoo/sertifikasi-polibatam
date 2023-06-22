@@ -11,6 +11,7 @@ Use App\Models\Pekerjaan;
 use App\Models\Apl1;
 use Auth;
 use Redirect;
+use App\Models\Formulir;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Unit;
 class PendaftaranController extends Controller
@@ -91,9 +92,8 @@ class PendaftaranController extends Controller
     }
 
     public function testpertanyaan(){
-        $t = Unit::first();
-        $t->elemen;
-        return $t;
-        return Unit::all();
+        $t = Formulir::first();
+        return $t->apl2;
+
     }
 }

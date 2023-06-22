@@ -7,8 +7,7 @@
                     <thead>
                         <tr>
                             <th>Nomor</th>
-                            <th>NIM</th>
-                            <th>Nama</th>
+                            <th>NAMA</th>
                             <th>Tujuan</th>
                             <th>Skema</th>
                             <th>Aksi</th>
@@ -19,14 +18,11 @@
                         @foreach ($apl as $data)
                         <tr>
                                 <td>{{ $i++ }}</td>
-                                <td>{{ $data->user->nim }}</td>
-                                <td>{{ $data->user->nama }}</td>
-                                <td>{{ $data->tujuanAsesmen }}</td>
-                                <td>{{ $data->skema->nama }}</td>
+                                <td>{{ $data->user->nama}}</td>
+                                <td>{{ $data->user->apl1->tujuanAsesmen }}</td>
+                                <td>{{ $data->user->apl1->skema->nama }}</td>
                                 <td>
-                                    <a href="" data-toggle="modal" data-target="#modalConfirm{{ $data->id }}" class="btn"><i class="fas fa-check text-success"></i>
-                                    </a>
-                                    <a href="" data-toggle="modal" data-target="#modalUn{{ $data->id }}" class="btn"><i class="fas fa-close text-danger"></i></a>
+                                    <a href="/dashboard-asesor/periksa-apl-dua/{{ $data->user->slug }}" class="btn btn-primary">Periksa APL 02</a>
                                 </td>
                             </tr>
                         @endforeach
@@ -35,8 +31,7 @@
                     <tfoot>
                         <tr>
                             <th>Nomor</th>
-                            <th>NIM</th>
-                            <th>Nama</th>
+                            <th>NAMA</th>
                             <th>Tujuan</th>
                             <th>Skema</th>
                             <th>Aksi</th>

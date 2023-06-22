@@ -63,4 +63,8 @@ class User extends Authenticatable
     public function apl1(){
         return $this->hasOne(Apl1::class);
     }
+
+    public function formulir(){
+        return $this->hasOne(Formulir::class);
+    }
 }

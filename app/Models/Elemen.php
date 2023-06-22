@@ -19,4 +19,8 @@ class Elemen extends Model
         return $this->hasMany(Pertanyaan::class);
     }
 
+    public function apl2(){
+        return $this->belongsTo(Apl2::class);
+    }
+
 }

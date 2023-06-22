@@ -3,7 +3,7 @@
 <div class="page-inner mt--5">
     <div class="row row-card-no-pd mt--3">
         <div class="table-responsive p-0 container-fluid" style="margin-right: 1cm; margin-left: 1cm; margin-top: 1cm">
-            <form action="/simpan-formulir-apl-dua" method="post">
+            <form action="/update-formulir-apl-dua" method="post">
                 @csrf
             <table border="2" style="border-collapse: collapse;" class="display" width="100%">
                 <tr>
@@ -24,8 +24,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; ">{<input type="checkbox" value="K" name="elemen1">}</td>
+                    @if ( $apl[0]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen1"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen1"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen1"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen1"></td>
+                    @endif
                     <td></td>
                 </tr>
                 <tr>
@@ -36,8 +41,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen2"></td>
+                    @if ( $apl[1]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen2"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen2"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen2"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen2"></td>
+                    @endif
                     <td></td>
                 </tr>
                 <tr>
@@ -48,8 +58,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen3"></td>
+                    @if ( $apl[2]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen3"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen3"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen3"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen3"></td>
+                    @endif
                     <td></td>
                 </tr>
                 <tr>
@@ -60,8 +75,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen4"></td>
+                    @if ( $apl[3]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen4"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen4"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen4"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen4"></td>
+                    @endif
                     <td></td>
                 </tr>
             </table>
@@ -85,8 +105,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen5"></td>
+                    @if ( $apl[4]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen5"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen5"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen5"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen5"></td>
+                    @endif
                     <td></td>
                 </tr>
                 <tr>
@@ -97,8 +122,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen6"></td>
+                    @if ( $apl[5]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen6"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen6"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen6"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen6"></td>
+                    @endif
                     <td></td>
                 </tr>
                 <tr>
@@ -109,8 +139,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen7"></td>
+                    @if ( $apl[6]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen7"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen7"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen7"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen7"></td>
+                    @endif
                     <td></td>
                 </tr>
             </table>
@@ -134,8 +169,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen8"></td>
+                    @if ( $apl[7]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen8"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen8"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen8"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen8"></td>
+                    @endif
                     <td></td>
                 </tr>
                 <tr>
@@ -146,8 +186,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen9"></td>
+                    @if ( $apl[8]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen9"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen9"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen9"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen9"></td>
+                    @endif
                     <td></td>
                 </tr>
                 <tr>
@@ -158,8 +203,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen10"></td>
+                    @if ( $apl[9]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen10"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen10"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen10"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen10"></td>
+                    @endif
                     <td></td>
                 </tr>
             </table>
@@ -183,8 +233,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen11"></td>
+                    @if ( $apl[10]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen11"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen11"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen11"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen11"></td>
+                    @endif
                     <td></td>
                 </tr>
                 <tr>
@@ -195,8 +250,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen12"></td>
+                    @if ( $apl[11]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen12"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen12"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen12"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen12"></td>
+                    @endif
                     <td></td>
                 </tr>
                 <tr>
@@ -207,8 +267,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen13"></td>
+                    @if ( $apl[12]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen13"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen13"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen13"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen13"></td>
+                    @endif
                     <td></td>
                 </tr>
                 <tr>
@@ -219,8 +284,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen14"></td>
+                    @if ( $apl[13]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen14"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen14"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen14"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen14"></td>
+                    @endif
                     <td></td>
                 </tr>
             </table>
@@ -244,8 +314,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen15"></td>
+                    @if ( $apl[14]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen15"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen15"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen15"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen15"></td>
+                    @endif
                     <td></td>
                 </tr>
                 <tr>
@@ -256,8 +331,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen16"></td>
+                    @if ( $apl[15]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen16"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen16"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen16"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen16"></td>
+                    @endif
                     <td></td>
                 </tr>
                 <tr>
@@ -268,8 +348,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen17"></td>
+                    @if ( $apl[16]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen17"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen17"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen17"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen17"></td>
+                    @endif
                     <td></td>
                 </tr>
                 <tr>
@@ -280,8 +365,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen18"></td>
+                    @if ( $apl[17]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen18"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen18"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen18"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen18"></td>
+                    @endif
                     <td></td>
                 </tr>
             </table>
@@ -305,8 +395,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen19"></td>
+                    @if ( $apl[18]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen19"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen19"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen19"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen19"></td>
+                    @endif
                     <td></td>
                 </tr>
                 <tr>
@@ -317,8 +412,13 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen20"></td>
+                    @if ( $apl[19]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen20"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen20"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen20"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen20"></td>
+                    @endif
                     <td></td>
                 </tr>
                 <tr>
@@ -329,12 +429,17 @@
                     @endforeach
                     <br>
                     </td>
-                    <td style="text-align: center; "><input type="checkbox" value="K" name="elemen21"></td>
+                    @if ( $apl[20]->penilaian == 'K')
+                    <td style="text-align: center;"><input type="checkbox" checked value="K" name="elemen21"></td>
                     <td style="text-align: center;"><input type="checkbox" value="BK" name="elemen21"></td>
+                    @else
+                    <td style="text-align: center;"><input type="checkbox"  value="K" name="elemen21"></td>
+                    <td style="text-align: center;"><input type="checkbox" checked value="BK" name="elemen21"></td>
+                    @endif
                     <td></td>
                 </tr>
-            </table>
-            <input type="submit">
+            </table><br>
+            <input type="submit" class="btn form-control btn-primary">
         </form>
         </div>
     </div>

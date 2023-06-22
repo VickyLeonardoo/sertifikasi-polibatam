@@ -13,7 +13,7 @@
                         <div class="col-7 col-stats">
                             <div class="numbers">
                                 <p class="card-category">APL 01</p>
-                                <a href="" class="card-title">Selanjutnya..</a>
+                                <a href="/dashboard-asesi/apl" class="card-title">Selanjutnya..</a>
                             </div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                         <div class="col-7 col-stats">
                             <div class="numbers">
                                 <p class="card-category">APL -2</p>
-                                <a href="" class="card-title">Selanjutnya..</a>
+                                <a href="/dashboard-asesi/apl-dua-tinjau" class="card-title">Selanjutnya..</a>
                             </div>
                         </div>
                     </div>

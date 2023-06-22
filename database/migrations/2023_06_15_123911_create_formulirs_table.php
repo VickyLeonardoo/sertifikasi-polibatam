@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('apl2s', function (Blueprint $table) {
+        Schema::create('formulirs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('formulir_id')->references('id')->on('formulirs');
-            $table->foreignId('elemen_id')->references('id')->on('elemens');
-            $table->enum('penilaian', ['K', 'BK'])->nullable();
-            $table->text('bukti')->nullable();
+            $table->foreignId('user_id')->references('id')->on('users');
+            $table->enum('status', ['Lulus', 'Tidak Lulus','Menunggu']);
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('apl2s');
+        Schema::dropIfExists('formulirs');
     }
 };

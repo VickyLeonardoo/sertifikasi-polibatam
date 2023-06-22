@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\SkemaController;
+use App\Models\Asesor;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,7 @@ Route::get('/as', function () {
     return view('dashboaord');
 });
 
+
 Route::get('/pertanyaan-test',[PendaftaranController::class,'testpertanyaan']);
 
 
@@ -45,6 +47,9 @@ Route::group(['middleware' => ['auth:user']], function () {
         Route::post('/dashboard-asesi/simpan-password', [AsesiController::class, 'simpanPassword']);
         Route::get('/dashboard-asesi/apl',[AsesiController::class,'viewApl']);
         Route::get('/dashboard-asesi/apl-dua',[AsesiController::class,'viewApl2']);
+        Route::get('/dashboard-asesi/apl-dua-tinjau',[AsesiController::class,'viewTinjauApl']);
+        Route::post('/simpan-formulir-apl-dua',[AsesiController::class,'simpanFormulirApl2']);
+        Route::post('/update-formulir-apl-dua',[AsesiController::class,'updateFormulirApl2']);
 
     });
 });
@@ -60,5 +65,8 @@ Route::group(['middleware' => ['auth:asesor']], function () {
         Route::get('/dashboard-asesor/data-pendaftar',[AsesorController::class,'viewPendaftar']);
         Route::get('/dashboard-asesor/identitas-asesi-{slug}',[AsesorController::class,'viewProfile']);
         Route::post('/dashboard-asesor/verifikasi-pendaftar-sertifikasi',[AsesorController::class,'verifikasiPendaftar']);
+        route::get('/dashboard-asesor/periksa-apl-dua/{slug}',[AsesorController::class,'viewAplPendaftar']);
+        Route::post('/dashboard-asesor/lulus-formulir-apl-dua-{id}',[AsesorController::class,'lulusApl']);
+        Route::post('/dashboard-asesor/tolak-formulir-apl-dua-{id}',[AsesorController::class,'tolakApl']);
     });
 });
